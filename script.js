@@ -2,7 +2,7 @@
    CONTACT MANAGER - JAVASCRIPT LOGIC
    =================================== */
 
-// ========== GLOBAL VARIABLES ==========
+// ========== GLOBAL VGit add .ARIABLES ==========
 let contacts = []; // Array to store all contacts
 const STORAGE_KEY = 'contacts'; // Key for localStorage
 
