@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Builder</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background:#f2f4f7;
+    font-family:Arial;
+}
+
+.container{
+    margin-top:30px;
+}
+
+.resume{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Resume Builder</h2>
+
+<div class="row">
+
+<!-- FORM -->
+<div class="col-md-6">
+<div class="card p-3">
+
+<label>Name</label>
+<input id="name" class="form-control mb-2" oninput="update()">
+
+<label>Email</label>
+<input id="email" class="form-control mb-2" oninput="update()">
+
+<label>Phone</label>
+<input id="phone" class="form-control mb-2" oninput="update()">
+
+<label>Address</label>
+<input id="address" class="form-control mb-2" oninput="update()">
+
+<label>Skills</label>
+<textarea id="skills" class="form-control mb-2" oninput="update()"></textarea>
+
+<label>Education</label>
+<textarea id="education" class="form-control mb-2" oninput="update()"></textarea>
+
+<label>Experience</label>
+<textarea id="experience" class="form-control mb-2" oninput="update()"></textarea>
+
+</div>
+</div>
+
+<!-- RESUME PREVIEW -->
+<div class="col-md-6">
+<div class="resume" id="resume">
+
+<h3 id="rname">Your Name</h3>
+<p id="remail">Email</p>
+<p id="rphone">Phone</p>
+<p id="raddress">Address</p>
+
+<hr>
+
+<h5>Skills</h5>
+<p id="rskills"></p>
+
+<h5>Education</h5>
+<p id="reducation"></p>
+
+<h5>Experience</h5>
+<p id="rexperience"></p>
+
+</div>
+
+<button onclick="printResume()" class="btn btn-primary mt-3 w-100">
+Download / Print Resume
+</button>
+
+</div>
+
+</div>
+</div>
+
+<script>
+function update(){
+    rname.innerText=name.value || "Your Name";
+    remail.innerText=email.value || "Email";
+    rphone.innerText=phone.value || "Phone";
+    raddress.innerText=address.value || "Address";
+
+    rskills.innerText=skills.value;
+    reducation.innerText=education.value;
+    rexperience.innerText=experience.value;
+}
+
+function printResume(){
+    window.print();
+}
+</script>
+
+</body>
+</html>
